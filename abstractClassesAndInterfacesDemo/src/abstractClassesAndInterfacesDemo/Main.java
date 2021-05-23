@@ -1,7 +1,10 @@
 package abstractClassesAndInterfacesDemo;
 
 
+import java.time.LocalDate;
+
 import Abstract.CustomerService;
+import Adapter.MernisServiceAdapter;
 import Concrete.CustomerCheckManager;
 import Concrete.NeroCustomerManager;
 import Concrete.StarbucksCustomerManager;
@@ -14,17 +17,19 @@ public class Main {
 				1,
 				"Fikret",
 				"Gözütok",
+				LocalDate.of(2000,0,0),
 				"12345678910");
 		
 		Customer c2 = new Customer(
 				2,
 				"Ýsmail",
 				"Demir",
-				"01234567890");
+				LocalDate.of(2000,0,0),
+				"12345678910");
 		
 		System.out.println("Starbucks*********************************************************************");
 		
-		CustomerService customerService = new StarbucksCustomerManager(new CustomerCheckManager());
+		CustomerService customerService = new StarbucksCustomerManager(new MernisServiceAdapter());
 		
 		customerService.save(c1);
 		customerService.save(c2);

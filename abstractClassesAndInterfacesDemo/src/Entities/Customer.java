@@ -1,5 +1,7 @@
 package Entities;
 
+import java.time.LocalDate;
+
 import Abstract.Entity;
 
 public class Customer implements Entity{
@@ -7,12 +9,14 @@ public class Customer implements Entity{
 	private int id;
 	private String firstName;
 	private String lastName;
+	private LocalDate dateOfBirth;
 	private String nationalityId;
 	
-	public Customer(int id, String firstName, String lastName, String nationalityId) {
+	public Customer(int id, String firstName, String lastName, LocalDate dateOfBirth, String nationalityId) {
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.dateOfBirth = dateOfBirth;
 		this.nationalityId = nationalityId;
 	}
 	
@@ -34,6 +38,14 @@ public class Customer implements Entity{
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+	public LocalDate getDateOfBirth() {
+		return dateOfBirth;
+	}
+
+	public void setDateOfBirth(LocalDate dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
+
 	public String getNationalityId() {
 		return nationalityId;
 	}
